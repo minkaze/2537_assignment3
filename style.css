@@ -1,0 +1,87 @@
+:root {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #212529;
+    --button-bg: #6c757d;
+    --button-hover: #5c636a;
+}
+
+body.dark-theme {
+    --bg-color: #212529;
+    --card-bg: #343a40;
+    --text-color: #f8f9fa;
+    --button-bg: #495057;
+    --button-hover: #6c757d;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.card,
+#status {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+#theme-toggle {
+    background-color: var(--button-bg);
+}
+
+#theme-toggle:hover {
+    background-color: var(--button-hover);
+}
+
+#game_grid {
+    max-width: 600px;
+    margin: auto;
+}
+
+#game_grid .game-card {
+    position: relative;
+    transition: transform 1s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#game_grid .game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.front_face,
+.back_face {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front_face {
+    transform: rotateY(180deg);
+}
+
+#game_grid .game-card.flip {
+    transform: rotateY(180deg);
+}
+
+#status {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    width: 800px;
+}
+
+#status p {
+    overflow-x: auto;
+    font-size: 25px;
+}
+
+#power-ups {
+    width: 80px;
+}
